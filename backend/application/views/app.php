@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="<?=base_url() ?>"></base>
   <meta charset="UTF-8">
   <title>溫暖的窩預算計算表</title>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 </head>
 <body>
   <div class="container mt-5">
+    <div class="row">
+      <div class="col h3 text-center">
+        歡迎使用溫暖的窩預算計算表
+      </div>
+    </div>
     <div class="row">
       <form class="col-12" action="<?=base_url()?>app/addItem" method="POST">
         <div class="form-group">
@@ -23,7 +27,7 @@
       </form>
     </div>
     <div class="row mt-5">
-      <div class="col-12">我們只剩下<span><?=$money?></span>元呀!</div>
+      <div class="col-12">你們剩下: <span><?=$money?></span> 元</div>
     </div>
     <div class="row mt-5">
       <div class="col-12">
@@ -40,10 +44,11 @@
           <tbody>
             <? $i=1; foreach ($items as $item) { ?>
             <tr>
-            <th scope="row"><?=$i?></th>
-            <td><?=$item['item']?></td>
-            <td><?=$item['price']?></td>
-            <td><?=$item['create_date']?></td>
+              <th scope="row"><?=$i?></th>
+              <td><?=$item['item']?></td>
+              <td><?=$item['price']?></td>
+              <td><?=$item['create_date']?></td>
+              <td><a href="<?=base_url()?>app/delItem/<?=$item['id']?>" class="btn btn-danger del">刪除</a></td>
             </tr>
             <? $i++; } ?>
           </tbody>

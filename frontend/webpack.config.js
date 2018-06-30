@@ -23,7 +23,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management',
-      template: "./src/templates/index.html"
+      filename: 'app.php',
+      template: './src/templates/index.html'
     })
   ],
   output: {
