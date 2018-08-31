@@ -21,7 +21,10 @@ class App extends CI_Controller {
 	{
 		$item  = $this->input->post("item");
 		$price = (int)$this->input->post("price");
-
+		if(!$price || !$item){
+			echo "<script>alert('你他媽沒寫清楚');history.back()</script>";
+			return;
+		}
 		if($price > $this->ori_money - $this->cost_sum){
 			echo "<script>alert('你他媽沒錢');history.back()</script>";
 			return;

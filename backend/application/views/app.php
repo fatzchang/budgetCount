@@ -27,7 +27,7 @@
       </form>
     </div>
     <div class="row mt-5">
-      <div class="col-12">你們剩下: <span><?=$money?></span> 元</div>
+      <div class="col-12">你們剩下: <span>27000</span> 元</div>
     </div>
     <div class="row mt-5">
       <div class="col-12">
@@ -48,7 +48,7 @@
               <td><?=$item['item']?></td>
               <td><?=$item['price']?></td>
               <td><?=$item['create_date']?></td>
-              <td><a href="<?=base_url()?>app/delItem/<?=$item['id']?>" class="btn btn-danger del">刪除</a></td>
+              <td><button data-url="<?=base_url()?>app/delItem/<?=$item['id']?>" class="btn btn-danger del">刪除</button></td>
             </tr>
             <? $i++; } ?>
           </tbody>
